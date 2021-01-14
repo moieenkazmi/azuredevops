@@ -12,18 +12,18 @@ pool:
 stages:
 - stage: Build
   jobs:
-    - job: Buildjob
-      steps:
-      - bash: echo "Build please"
+  - job: Buildjob
+    steps:
+    - bash: echo "Build please"
 - stage: Devdeploy
   jobs:
   - deployment: devdeply job
     environment: Dev
     strategy:
-     runOnce:
-       deploy:
-         steps:
-         - script: echo deploy to Dev
+      runOnce:
+        deploy:
+          steps:
+          - script: echo deploy to Dev
 - stage: QAdeploy
   jobs:
   - deployment: QAdeply job
